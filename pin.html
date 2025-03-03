@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - King Jak Burgers</title>
+    <link rel="stylesheet" href="pin.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="images/logo.png" alt="King Jak Burgers Logo" class="logo">
+        <div class="pin-indicators">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="pin-pad">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="zero">0</button>
+        </div>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('.pin-pad button');
+        const indicators = document.querySelectorAll('.pin-indicators div');
+        let pin = '';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (pin.length < 4) {
+                    pin += button.textContent;
+                    indicators[pin.length - 1].classList.add('active');
+                }
+                if (pin.length === 4) {
+                    if (pin === '2001') {
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 1000);
+                    } else {
+                        indicators.forEach(indicator => {
+                            indicator.classList.remove('active');
+                            indicator.classList.add('wrong');
+                        });
+                        setTimeout(() => {
+                            indicators.forEach(indicator => indicator.classList.remove('wrong'));
+                            pin = '';
+                        }, 1000);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

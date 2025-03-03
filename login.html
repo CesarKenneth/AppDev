@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page -->
+    <title>Login - King Jak Burgers</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Main container for the login form -->
+    <div class="login-container">
+        <!-- Logo of King Jak Burgers -->
+        <img src="images/logo.png" alt="King Jak Burgers Logo" class="logo">
+        <!-- Input group for the username -->
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username">
+        </div>
+        <!-- Input group for the password -->
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+        </div>
+        <!-- Login button that triggers the validateLogin function on click -->
+        <button class="login-button" onclick="validateLogin()">Login</button>
+    </div>
+    <!-- JavaScript function to validate the login credentials -->
+    <script>
+        function validateLogin() {
+            // Get the values of the username and password input fields
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            // Check if the username and password match the predefined values
+            if(username === 'cesar' && password === 'akosipogi') {
+                // Redirect to the pin.html page if the credentials are correct
+                window.location.href = 'pin.html';
+            } else {
+                // Show an alert if the credentials are incorrect
+                alert('Invalid credentials');
+            }
+        }
+    </script>
+</body>
+</html>

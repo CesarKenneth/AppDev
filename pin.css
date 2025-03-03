@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+body {
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+}
+
+.login-container {
+    text-align: center;
+    margin-top: 50px; 
+}
+
+.logo {
+    width: 150px; 
+    margin-top: 20px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pin-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.pin-pad button {
+    width: 80px; 
+    height: 80px; 
+    font-size: 24px;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.pin-pad button.zero {
+    grid-column: 2;
+}
+
+.pin-pad button:hover {
+    background-color: #bbb;
+}
+
+.pin-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pin-indicators div {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.pin-indicators .active {
+    background-color: #4caf50;
+}
+
+.pin-indicators .wrong {
+    background-color: red;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: red;
+}
+

@@ -1,0 +1,511 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font for all elements */
+}
+
+body {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #333; /* Default text color */
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px; /* Fixed width for sidebar */
+    background-color: #F48610; /* Orange background color */
+    color: white; /* White text color */
+    padding-top: 10px; /* Top padding */
+}
+
+.logo-container {
+    text-align: center; /* Center align logo */
+    padding: 15px 0; /* Vertical padding */
+}
+
+.logo {
+    width: 80px; /* Logo width */
+    height: 80px; /* Logo height */
+    background-color: white; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    object-fit: contain; /* Contain within the box */
+}
+
+button.nav-item {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items */
+    padding: 15px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.2s, transform 0.2s; /* Smooth transitions */
+    background: none; /* No background */
+    border: none; /* No border */
+    width: 100%; /* Full width */
+    text-align: left; /* Left align text */
+    color: white; /* White text color */
+}
+
+button.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+    transform: translateX(5px); /* Slight move to the right on hover */
+}
+
+button.nav-item.active {
+    background-color: #1C1106; /* Dark background for active item */
+}
+
+button.nav-item i {
+    margin-right: 10px; /* Margin for icon */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column; /* Column layout */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center align items */
+    padding: 10px 20px; /* Padding */
+    background-color: white; /* White background */
+    border-bottom: 1px solid #ddd; /* Bottom border */
+}
+
+.breadcrumb {
+    color: #777; /* Grey text color */
+}
+
+.search-container {
+    flex: 1; /* Take remaining space */
+    max-width: 450px; /* Max width */
+    margin: 0 auto; /* Center align */
+    position: relative; /* Relative positioning */
+}
+
+.search-bar {
+    width: 100%; /* Full width */
+    padding: 8px 15px; /* Padding */
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid #ddd; /* Border */
+    padding-left: 35px; /* Padding for icon */
+}
+
+.search-icon {
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 10px; /* Left position */
+    transform: translateY(-50%); /* Center vertically */
+    color: #777; /* Grey color */
+}
+
+.user-actions {
+    display: flex;
+    align-items: center; /* Align items to the center */
+    gap: 10px; /* Adjust gap between buttons */
+}
+
+.user-actions button {
+    padding: 5px 10px; /* Make the button smaller */
+    font-size: 12px; /* Adjust font size */
+    border-radius: 3px; /* Adjust border radius */
+    background-color: white; /* Button background color */
+    color: #333; /* Button text color */
+    border: 1px solid #ddd; /* Add border */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.2s, transform 0.2s; /* Transition for background color and transform */
+}
+
+.user-actions button:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.user-actions i {
+    font-size: 20px; /* Icon size */
+    color: #777; /* Grey color */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.user-submenu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Absolute positioning */
+    top: 50px; /* Position below the user actions */
+    right: 10px; /* Right position */
+    background-color: white; /* White background */
+    border: 1px solid #ccc; /* Border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+    z-index: 1000; /* On top of other elements */
+}
+
+.user-submenu ul {
+    list-style: none; /* No list style */
+    margin: 0; /* No margin */
+    padding: 0; /* No padding */
+}
+
+.user-submenu ul li {
+    padding: 10px 20px; /* Padding */
+}
+
+.user-submenu ul li a {
+    text-decoration: none; /* No underline */
+    color: #333; /* Text color */
+}
+
+.user-submenu ul li:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+}
+
+/* Orange Bar */
+.orange-bar {
+    height: 40px; /* Height */
+    background-color: #f08c00; /* Orange background color */
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    flex: 1; /* Take remaining space */
+    background-color: #f5f5f5; /* Light grey background */
+    padding: 20px; /* Padding */
+    overflow-y: auto; /* Scrollable */
+}
+
+.dashboard-header {
+    margin-bottom: 20px; /* Margin */
+    color: #ff5252; /* Red color */
+    text-transform: uppercase; /* Uppercase text */
+    font-size: 14px; /* Font size */
+    font-weight: bold; /* Bold text */
+}
+
+.user-profile {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items */
+    margin-bottom: 20px; /* Margin */
+}
+
+.profile-img {
+    width: 40px; /* Width */
+    height: 40px; /* Height */
+    border-radius: 50%; /* Circular image */
+    margin-right: 10px; /* Margin */
+}
+
+.profile-name {
+    font-weight: 500; /* Font weight */
+    color: #333; /* Text color */
+}
+
+.add-icon {
+    margin-left: 10px; /* Margin */
+    color: #777; /* Grey color */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Sales Chart */
+.sales-chart-container {
+    background-color: white; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding */
+    margin-bottom: 20px; /* Margin */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Shadow */
+}
+
+.sales-header {
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between items */
+    margin-bottom: 15px; /* Margin */
+}
+
+.sales-title {
+    font-size: 14px; /* Font size */
+    font-weight: bold; /* Bold text */
+    padding: 5px 10px; /* Padding */
+    border: 1px solid #ddd; /* Border */
+    border-radius: 3px; /* Rounded corners */
+}
+
+.date-picker {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items */
+}
+
+.date-input {
+    padding: 8px 12px; /* Padding */
+    font-size: 14px; /* Font size */
+    border: 1px solid #ddd; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.chart-container {
+    position: relative; /* Relative positioning */
+    height: 180px; /* Height */
+    padding-bottom: 30px; /* Padding */
+    margin-top: 20px; /* Margin */
+}
+
+.chart {
+    position: relative; /* Relative positioning */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    border-bottom: 1px solid #ddd; /* Bottom border */
+}
+
+.price-labels {
+    position: absolute; /* Absolute positioning */
+    left: 0; /* Left position */
+    top: 0; /* Top position */
+    bottom: 30px; /* Bottom position */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Column layout */
+    justify-content: space-between; /* Space between items */
+    color: #777; /* Grey color */
+    font-size: 12px; /* Font size */
+}
+
+.price-label {
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.chart-grid {
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Top position */
+    left: 0; /* Left position */
+    right: 0; /* Right position */
+    bottom: 0; /* Bottom position */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Column layout */
+    justify-content: space-between; /* Space between items */
+}
+
+.grid-line {
+    height: 1px; /* Height */
+    background-color: rgba(0,0,0,0.05); /* Light background color */
+    width: 100%; /* Full width */
+}
+
+.vertical-line {
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Top position */
+    bottom: 0; /* Bottom position */
+    width: 1px; /* Width */
+    background-color: rgba(0,0,0,0.05); /* Light background color */
+}
+
+.chart-line {
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Top position */
+    left: 40px; /* Left position */
+    right: 0; /* Right position */
+    bottom: 0; /* Bottom position */
+    z-index: 2; /* On top of other elements */
+}
+
+.line-one {
+    position: absolute; /* Absolute positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    stroke: #000; /* Black stroke */
+    stroke-width: 2px; /* Stroke width */
+    fill: none; /* No fill */
+}
+
+.line-two {
+    position: absolute; /* Absolute positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    stroke: #f08c00; /* Orange stroke */
+    stroke-width: 2px; /* Stroke width */
+    fill: none; /* No fill */
+}
+
+.chart-area {
+    position: absolute; /* Absolute positioning */
+    left: 40px; /* Left position */
+    right: 0; /* Right position */
+    bottom: 0; /* Bottom position */
+    height: 100%; /* Full height */
+    z-index: 1; /* Below other elements */
+}
+
+.area-fill {
+    position: absolute; /* Absolute positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    fill: rgba(240, 140, 0, 0.2); /* Light orange fill */
+}
+
+.total-amount {
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Top position */
+    right: 30px; /* Right position */
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+}
+
+.chart-labels {
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between items */
+    margin-top: 10px; /* Margin */
+    color: #777; /* Grey color */
+    font-size: 12px; /* Font size */
+    padding-left: 40px; /* Padding */
+}
+
+/* Bottom Cards */
+.bottom-cards {
+    display: flex; /* Flexbox for alignment */
+    gap: 20px; /* Gap between cards */
+}
+
+.card {
+    flex: 1; /* Take equal space */
+    background-color: white; /* White background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Shadow on hover */
+}
+
+.stocks-card {
+    background-color: #181818; /* Dark background */
+    color: white; /* White text color */
+}
+
+.stocks-title {
+    margin-bottom: 15px; /* Margin */
+    font-size: 14px; /* Font size */
+}
+
+.stocks-amount {
+    font-size: 36px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: #f08c00; /* Orange color */
+    margin-bottom: 5px; /* Margin */
+}
+
+.stocks-percentage {
+    font-size: 12px; /* Font size */
+    color: #aaa; /* Grey color */
+    margin-bottom: 20px; /* Margin */
+}
+
+.progress-container {
+    position: relative; /* Relative positioning */
+}
+
+.progress-bg {
+    height: 100px; /* Height */
+    width: 100px; /* Width */
+    border-radius: 50%; /* Circular */
+    background-color: #333; /* Dark background */
+    margin: 0 auto; /* Center align */
+    position: relative; /* Relative positioning */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center align items */
+}
+
+.progress-fill {
+    height: 100px; /* Height */
+    width: 100px; /* Width */
+    border-radius: 50%; /* Circular */
+    background: conic-gradient(#f08c00 0% 80%, transparent 80% 100%); /* Gradient fill */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Top position */
+    left: 0; /* Left position */
+}
+
+.progress-center {
+    height: 70px; /* Height */
+    width: 70px; /* Width */
+    border-radius: 50%; /* Circular */
+    background-color: #181818; /* Dark background */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center align items */
+    z-index: 1; /* On top of other elements */
+}
+
+.progress-percentage {
+    font-size: 24px; /* Font size */
+    font-weight: bold; /* Bold text */
+}
+
+/* Products Card */
+.products-card {
+    flex: 2; /* Take more space */
+}
+
+.products-header {
+    margin-bottom: 20px; /* Margin */
+    font-weight: bold; /* Bold text */
+}
+
+.products-table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.products-table th {
+    text-align: left; /* Left align text */
+    padding: 10px; /* Padding */
+    color: #777; /* Grey color */
+    font-weight: normal; /* Normal font weight */
+    font-size: 12px; /* Font size */
+}
+
+.products-table td {
+    padding: 10px; /* Padding */
+    border-top: 1px solid #f0f0f0; /* Top border */
+}
+
+.product-name {
+    font-weight: 500; /* Font weight */
+}
+
+.product-info {
+    font-size: 12px; /* Font size */
+    color: #777; /* Grey color */
+}
+
+.popularity-bar {
+    height: 5px; /* Height */
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 5px; /* Rounded corners */
+    position: relative; /* Relative positioning */
+    width: 100%; /* Full width */
+}
+
+.popularity-fill {
+    position: absolute; /* Absolute positioning */
+    height: 5px; /* Height */
+    background-color: #f08c00; /* Orange color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.sales-percentage {
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center align text */
+}
+
